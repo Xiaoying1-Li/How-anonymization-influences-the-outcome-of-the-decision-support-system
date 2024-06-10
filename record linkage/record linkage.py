@@ -79,7 +79,7 @@ def find_matching_pairs_optimized(df_a, df_b):
     matching_pairs = []
 
     for idx_a, row_a in df_a.iterrows():
-        matching_records_b = df_b[(df_b['sex'] == row_a['sex']) & (df_b['target'] == row_a['target'])]
+        matching_records_b = df_b[(df_b['sex'] == row_a['sex']) & (df_b['target'] == row_a['target'])]#  & (df_b['cp'] == row_a['cp'])& (df_b['fbs'] == row_a['fbs']) & (df_b['restecg'] == row_a['restecg'])]
         if not matching_records_b.empty:
             for idx_b, row_b in matching_records_b.iterrows():
                 matching_pairs.append((idx_a, idx_b))

@@ -32,7 +32,7 @@ def read_data():
         numeric_dict.append(dict())
     # oder categorical attributes in intuitive order
     # here, we use the appear number
-    with open('data/process/heart_disease_b.csv', 'r') as data_file:
+    with open('data/process/heart_disease_a.csv', 'r') as data_file:
         for line_num, line in enumerate(data_file):
             if line_num == 0:  # 跳过第一行
                 continue

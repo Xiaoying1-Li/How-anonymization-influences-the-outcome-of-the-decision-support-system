@@ -4,11 +4,14 @@ import matplotlib.pyplot as plt
 # 读取数据
 duplicated_df = pd.read_csv('../data/process/duplicatedindex.csv')
 comparison_result_df = pd.read_csv('../data/record linkage/comparison_result.csv')
-anonymized_a_df = pd.read_csv('../data/anonymized_result/anonymized_a.csv')
-anonymized_b_df = pd.read_csv('../data/anonymized_result/anonymized_b.csv')
+anonymized_a_df = pd.read_csv('../data/anonymized_result/anonymized_a.data',sep=';')
+anonymized_a_df.to_csv('../data/anonymized_result/anonymized_a.csv', index=False,sep=',')
+anonymized_b_df = pd.read_csv('../data/anonymized_result/anonymized_b.data',sep=';')
+anonymized_b_df.to_csv('../data/anonymized_result/anonymized_b.csv', index=False,sep=',')
 
 # 合并数据
 merged_df = pd.merge(duplicated_df, comparison_result_df, on=['index_a', 'index_b'], how='inner')
+
 
 # 计算'*'占比
 def calculate_star_count(df):
